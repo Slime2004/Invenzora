@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Semi-transparent background -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#60000000" />
+        </shape>
+    </item>
+
+    <!-- Transparent scanning area -->
+    <item android:gravity="center">
+        <shape android:shape="rectangle">
+            <size android:width="280dp" android:height="180dp" />
+            <solid android:color="@android:color/transparent" />
+            <stroke android:width="2dp" android:color="#FFFFFF" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+
+    <!-- Corner indicators -->
+    <item android:gravity="center">
+        <layer-list>
+            <!-- Top-left corner -->
+            <item android:gravity="center">
+                <inset android:insetLeft="120dp" android:insetTop="70dp">
+                    <shape android:shape="rectangle">
+                        <size android:width="20dp" android:height="3dp" />
+                        <solid android:color="#FF4444" />
+                    </shape>
+                </inset>
+            </item>
+
+            <!-- Top-right corner -->
+            <item android:gravity="center">
+                <inset android:insetRight="120dp" android:insetTop="70dp">
+                    <shape android:shape="rectangle">
+                        <size android:width="20dp" android:height="3dp" />
+                        <solid android:color="#FF4444" />
+                    </shape>
+                </inset>
+            </item>
+
+            <!-- Bottom-left corner -->
+            <item android:gravity="center">
+                <inset android:insetLeft="120dp" android:insetBottom="70dp">
+                    <shape android:shape="rectangle">
+                        <size android:width="20dp" android:height="3dp" />
+                        <solid android:color="#FF4444" />
+                    </shape>
+                </inset>
+            </item>
+
+            <!-- Bottom-right corner -->
+            <item android:gravity="center">
+                <inset android:insetRight="120dp" android:insetBottom="70dp">
+                    <shape android:shape="rectangle">
+                        <size android:width="20dp" android:height="3dp" />
+                        <solid android:color="#FF4444" />
+                    </shape>
+                </inset>
+            </item>
+        </layer-list>
+    </item>
+</layer-list>

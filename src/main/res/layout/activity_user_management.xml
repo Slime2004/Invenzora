@@ -1,0 +1,111 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="👥 User Management"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- User Statistics Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:drawable/dialog_holo_light_frame"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/tv_user_stats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Loading user statistics..."
+                android:textSize="14sp"
+                android:lineSpacingExtra="4dp"/>
+        </LinearLayout>
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/btn_create_user"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="➕ Create User"
+                android:layout_marginEnd="8dp"
+                android:padding="12dp"/>
+
+            <Button
+                android:id="@+id/btn_refresh_users"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="🔄 Refresh"
+                android:layout_marginStart="8dp"
+                android:padding="12dp"/>
+        </LinearLayout>
+
+        <!-- Users List Header -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="👤 All Users (Tap to manage)"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Users List -->
+        <ListView
+            android:id="@+id/lv_users"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:background="@android:drawable/dialog_holo_light_frame"
+            android:padding="8dp"
+            android:divider="@android:color/darker_gray"
+            android:dividerHeight="1dp"
+            android:scrollbars="vertical"
+            android:fastScrollEnabled="true"/>
+
+        <!-- Admin Guide -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:color/background_light"
+            android:padding="16dp"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🛡️ User Management Guide"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="👑 Administrator Role:\n• Full access to all inventory management features\n• Can add, edit, delete items\n• Can manage barcodes and system settings\n• Can manage other users\n\n👤 Employee Role:\n• Can search items and view inventory\n• Can process sales transactions\n• Cannot modify inventory or access admin functions\n\n⚠️ Important Notes:\n• You cannot change your own role\n• Cannot delete the last administrator\n• Password resets take effect immediately\n• Deleted users cannot be recovered"
+                android:textSize="13sp"
+                android:lineSpacingExtra="2dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

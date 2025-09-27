@@ -1,0 +1,113 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Scannable Barcode"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Barcode Image Display -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:drawable/dialog_holo_light_frame"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:id="@+id/iv_barcode"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="fitCenter"
+                android:background="@android:color/white"
+                android:contentDescription="Generated Barcode"/>
+
+            <TextView
+                android:id="@+id/tv_barcode_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Barcode Information"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_save_barcode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="💾 Save to Gallery"
+                android:layout_marginBottom="8dp"
+                android:padding="16dp"/>
+
+            <Button
+                android:id="@+id/btn_share_barcode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📤 Share Barcode"
+                android:layout_marginBottom="8dp"
+                android:padding="16dp"/>
+
+            <Button
+                android:id="@+id/btn_print_barcode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🖨️ Print Barcode"
+                android:layout_marginBottom="16dp"
+                android:padding="16dp"/>
+        </LinearLayout>
+
+        <!-- Instructions -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:color/background_light"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="How to Use This Barcode"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. Save or print this barcode image\n2. Attach the printed barcode to your physical item\n3. Use any barcode scanner app to scan and verify\n4. The barcode scanner should read the number shown above\n5. Your inventory app will recognize this barcode when selling items"
+                android:textSize="13sp"
+                android:lineSpacingExtra="2dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="💡 Tip: Test the barcode with a scanner app before printing multiple copies"
+                android:textSize="12sp"
+                android:textStyle="italic"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/holo_blue_light"
+                android:padding="8dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

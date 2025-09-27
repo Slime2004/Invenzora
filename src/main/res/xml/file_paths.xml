@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Cache directory for temporary barcode files -->
+    <cache-path name="barcode_cache" path="barcodes/" />
+    <cache-path name="print_cache" path="print/" />
+
+    <!-- External files directory for saved barcodes -->
+    <external-files-path name="barcode_files" path="barcodes/" />
+
+    <!-- External cache for sharing -->
+    <external-cache-path name="shared_barcodes" path="shared/" />
+</paths>

@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:padding="16dp"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <EditText android:id="@+id/et_id" android:hint="ID to delete" android:inputType="number"
+        android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:layout_marginTop="8dp">
+
+        <Button android:id="@+id/btn_preview" android:text="Preview Item"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"/>
+
+        <Button android:id="@+id/btn_delete" android:text="Delete"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <TextView android:text="Tip: Use Preview to see item details before deleting"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:textSize="12sp" android:layout_marginTop="16dp"
+        android:textStyle="italic"/>
+</LinearLayout>

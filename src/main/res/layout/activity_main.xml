@@ -1,0 +1,252 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <!-- App Title and User Menu -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="📦 Invenzora Inventory"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"/>
+
+            <Button
+                android:id="@+id/btn_user_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⋮"
+                android:textSize="20sp"
+                android:background="@android:color/transparent"
+                android:padding="8dp"/>
+        </LinearLayout>
+
+        <!-- User Welcome Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:color/holo_blue_light"
+            android:padding="16dp"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:id="@+id/tv_welcome_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Welcome, User!"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+
+        <!-- Low Stock Alert Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/tv_low_stock_alert"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="⚠️ Low stock items detected"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:padding="12dp"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/btn_low_stock_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📋 View Low Stock Details"
+                android:textSize="14sp"
+                android:background="@android:color/transparent"
+                android:textColor="@android:color/holo_red_dark"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+        <!-- Employee Section - Always visible for logged in users -->
+        <LinearLayout
+            android:id="@+id/ll_employee_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:drawable/dialog_holo_light_frame"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📱 Available Operations"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginBottom="12dp"
+                android:gravity="center"/>
+
+            <Button
+                android:id="@+id/btnSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🔍 Search Items"
+                android:layout_marginBottom="8dp"
+                android:textSize="16sp"
+                android:padding="12dp"/>
+
+            <Button
+                android:id="@+id/btnSell"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="💰 Sell Items"
+                android:textSize="16sp"
+                android:padding="12dp"
+                android:layout_marginBottom="8dp"/>
+
+            <Button
+                android:id="@+id/btn_help"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="❓ Help and Guide"
+                android:textSize="14sp"
+                android:background="@android:color/transparent"
+                android:textColor="@android:color/holo_blue_dark"/>
+        </LinearLayout>
+
+        <!-- Admin Only Section -->
+        <LinearLayout
+            android:id="@+id/ll_admin_only_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <!-- Inventory Management -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@android:color/holo_red_light"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="👑 Administrator Functions"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="12dp"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="📦 Inventory Management"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="8dp"
+                    android:textColor="@android:color/white"/>
+
+                <Button
+                    android:id="@+id/btnAdd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="➕ Add Item"
+                    android:layout_marginBottom="8dp"
+                    android:background="@android:color/white"
+                    android:textColor="@android:color/holo_red_dark"/>
+
+                <Button
+                    android:id="@+id/btnUpdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="✏️ Update Item"
+                    android:layout_marginBottom="8dp"
+                    android:background="@android:color/white"
+                    android:textColor="@android:color/holo_red_dark"/>
+
+                <Button
+                    android:id="@+id/btnDelete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🗑️ Delete Item"
+                    android:layout_marginBottom="16dp"
+                    android:background="@android:color/white"
+                    android:textColor="@android:color/holo_red_dark"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="📊 Barcode Management"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="8dp"
+                    android:textColor="@android:color/white"/>
+
+                <Button
+                    android:id="@+id/btnBarcodeManagement"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🏷️ Manage Barcodes"
+                    android:layout_marginBottom="8dp"
+                    android:background="@android:color/white"
+                    android:textColor="@android:color/holo_red_dark"/>
+
+                <Button
+                    android:id="@+id/btnBarcodeTroubleshooting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🔧 Barcode Troubleshooting"
+                    android:background="@android:color/white"
+                    android:textColor="@android:color/holo_red_dark"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Access Level Info -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:color/background_light"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🔐 Access Level Information"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="👑 Administrator: Full access to all inventory management features\n\n👤 Employee: Access to search items and process sales only\n\n💡 Use the menu (⋮) in the top-right corner for logout and profile options"
+                android:textSize="12sp"
+                android:lineSpacingExtra="2dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

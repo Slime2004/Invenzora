@@ -1,0 +1,198 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView android:text="💰 Sell Items"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textSize="24sp" android:textStyle="bold"
+            android:layout_marginBottom="8dp" android:gravity="center"/>
+
+        <!-- User Info Section -->
+        <TextView
+            android:id="@+id/tv_user_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Loading user info..."
+            android:textSize="12sp"
+            android:gravity="center"
+            android:background="@android:color/holo_green_light"
+            android:textColor="@android:color/white"
+            android:padding="8dp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Search Method Selection -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:drawable/dialog_holo_light_frame"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🔍 Search Method:"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:layout_marginBottom="8dp"/>
+
+            <RadioGroup
+                android:id="@+id/rg_search_method"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_barcode"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="📊 By Barcode"
+                    android:checked="true"/>
+
+                <RadioButton
+                    android:id="@+id/rb_id"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="🆔 By Item ID"/>
+            </RadioGroup>
+        </LinearLayout>
+
+        <!-- Barcode Input Section -->
+        <LinearLayout
+            android:id="@+id/ll_barcode_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="8dp">
+
+                <EditText android:id="@+id/et_barcode_manual"
+                    android:hint="Scan or enter barcode"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+                <Button android:id="@+id/btn_scan" android:text="📷 Scan"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"/>
+            </LinearLayout>
+
+            <Button android:id="@+id/btn_find_by_barcode" android:text="🔍 Find Item by Barcode"
+                android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <!-- ID Input Section -->
+        <LinearLayout
+            android:id="@+id/ll_id_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <EditText android:id="@+id/et_item_id"
+                    android:hint="Enter item ID (e.g., 1, 2, 3...)"
+                    android:inputType="number"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+                <Button android:id="@+id/btn_show_items"
+                    android:text="📋 List"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"/>
+            </LinearLayout>
+
+            <Button android:id="@+id/btn_find_by_id" android:text="🔍 Find Item by ID"
+                android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="💡 Tip: Use the List button to see all item IDs"
+                android:textSize="12sp"
+                android:textStyle="italic"
+                android:layout_marginTop="4dp"
+                android:background="@android:color/holo_blue_light"
+                android:padding="8dp"/>
+        </LinearLayout>
+
+        <!-- Item Details Section -->
+        <LinearLayout android:id="@+id/ll_item_details"
+            android:orientation="vertical" android:padding="16dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@android:drawable/dialog_holo_light_frame"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp">
+
+            <TextView android:id="@+id/tv_item_name" android:textSize="18sp" android:textStyle="bold"
+                android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+            <TextView android:id="@+id/tv_item_details" android:textSize="14sp"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginTop="16dp">
+
+                <TextView android:text="Quantity to sell:"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"/>
+
+                <EditText android:id="@+id/et_sell_quantity" android:hint="1"
+                    android:inputType="number" android:text="1"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_marginStart="8dp"/>
+            </LinearLayout>
+
+            <Button android:id="@+id/btn_sell" android:text="💰 Complete Sale"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textSize="16sp"
+                android:padding="12dp"/>
+        </LinearLayout>
+
+        <!-- Access Level Info -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:color/background_light"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="💡 Sales Guide"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📊 By Barcode: Scan or manually enter the item's barcode for quick lookup\n\n🆔 By Item ID: Enter the numeric ID of the item (use List button to see all IDs)\n\n🏪 Stock levels are automatically updated after each sale\n\n⚠️ Sales transactions are recorded with your user information for tracking"
+                android:textSize="13sp"
+                android:lineSpacingExtra="2dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
